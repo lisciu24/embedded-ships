@@ -1,0 +1,30 @@
+# A solution is a collection of related projects that share same base configuration.
+solution:
+  created-for: CMSIS-Toolbox@2.0.0
+  cdefault:
+  compiler: AC6
+
+  # List the packs that define the device and/or board.
+  packs:
+    - pack: Keil::LPC1700_DFP
+    - pack: ARM::CMSIS
+
+  # List different hardware targets that are used to deploy the solution.
+  target-types:
+    - type: LPC1768
+      board: Waveshare::Open1768:Ver 1.3
+      device: NXP::LPC1768
+
+  # List of different build configurations.
+  build-types:
+    - type: Debug
+      debug: on
+      optimize: none
+
+    - type: Release
+      debug: off
+      optimize: balanced
+
+  # List related projects.
+  projects:
+    - project: Project/Project.cproject.yml
