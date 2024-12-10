@@ -1,13 +1,38 @@
 # A project translates into one executable or library.
 project:
-  
   groups:
     - group: Source Files
       files:
         - file: ./main.c
+      groups:
+        - group: drivers
+          files:
+            - file: drivers/UART/UART.h
+            - file: drivers/UART/UART.c
+            - file: drivers/LCD/LCD.c
+            - file: drivers/LCD/LCD.h
+            - file: drivers/TP/TP.c
+            - file: drivers/TP/TP.h
+        - group: ext-libs
+          files:
+            - file: drivers/LCD/asciiLib.h
+            - file: drivers/LCD/asciiLib.c
+            - file: drivers/LCD/LCD_ILI9325.c
+            - file: drivers/LCD/LCD_ILI9325.h
+            - file: drivers/LCD/Open1768_LCD.c
+            - file: drivers/LCD/Open1768_LCD.h
+            - file: drivers/TP/TP_Open1768.c
+            - file: drivers/TP/TP_Open1768.h
 
   # List components to use for your application.
   # A software component is a re-usable unit that may be configurable.
   components:
     - component: ARM::CMSIS:CORE
     - component: Device:Startup
+    - component: Keil::CMSIS Driver:USART
+    - component: Keil::Device:PIN@1.0.0
+    - component: Keil::Device:GPDMA@1.2.0
+    - component: Keil::CMSIS Driver:SPI:SPI
+    - component: Keil::Device:GPIO@1.1.0
+  packs:
+    - pack: Keil::LPC1700_DFP
