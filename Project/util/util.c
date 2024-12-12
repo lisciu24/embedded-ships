@@ -22,3 +22,17 @@ void UTIL_calibrate_TP() {
   /// TODO: set TP bounds
   // TP_set_bounds(int min_x, int max_x, int min_y, int max_y);
 }
+
+void UTIL_get_XY(int *x, int *y) {
+  TP_read_XY(x, y);
+  UTIL_map_XY_to_LCD(x, y);
+}
+
+void UTIL_map_XY_to_LCD(int *x, int *y) {
+  *x = UTIL_map(*x, TP_config.MIN_READ_X, TP_config.MAX_READ_X, 0, LCD_MAX_X);
+  *y = UTIL_map(*y, TP_config.MIN_READ_Y, TP_config.MAX_READ_Y, 0, LCD_MAX_Y);
+}
+
+int UTIL_map(int value, int in_min, int in_max, int out_min, int out_max) {
+  return (value - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+}
