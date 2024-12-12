@@ -23,6 +23,10 @@ project:
             - file: drivers/LCD/Open1768_LCD.h
             - file: drivers/TP/TP_Open1768.c
             - file: drivers/TP/TP_Open1768.h
+        - group: util
+          files:
+            - file: util/util.h
+            - file: util/util.c
 
   # List components to use for your application.
   # A software component is a re-usable unit that may be configurable.
