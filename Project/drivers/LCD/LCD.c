@@ -1,7 +1,4 @@
 #include "LCD.h"
-#include "LCD_ILI9325.h"
-#include "Open1768_LCD.h"
-#include "asciiLib.h"
 
 void LCD_initialize() { init_ILI9325(); }
 

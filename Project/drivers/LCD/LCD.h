@@ -1,6 +1,9 @@
 #ifndef __LCD_H
 #define __LCD_H
 
+#include "LCD_ILI9325.h"
+#include "Open1768_LCD.h"
+#include "asciiLib.h"
 #include <stdint.h>
 
 void LCD_initialize();
