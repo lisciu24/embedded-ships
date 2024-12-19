@@ -59,5 +59,11 @@ void handle_touch(uint16_t color){
 }
 
 void draw_ship(uint16_t x, uint16_t y, uint16_t color){
+	//set ship
 	LCD_fill_rect(x, y, LCD_MAX_X/10, LCD_MAX_X/10, color)
+	//miss
+	// LCD_draw_line(x, y, x+10, y+10, LCDRed);
+	// LCD_draw_line(x+10, y, x-10, y+10, LCDRed);
+	//hit
+	//LCD_fill_circle(x, y, LCD_MAX_X/10, LCD_MAX_X/10, LCDGreen)
 }
