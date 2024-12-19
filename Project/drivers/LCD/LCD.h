@@ -22,4 +22,6 @@ void LCD_fill_rect(uint16_t x, uint16_t y, int w, int h, uint16_t color);
 void LCD_draw_char(uint16_t x, uint16_t y, char c, uint16_t color);
 void LCD_draw_str(uint16_t x, uint16_t y, char *c, uint16_t color);
 
+void LCD_draw_board();
+
 #endif
