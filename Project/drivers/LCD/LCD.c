@@ -129,3 +129,17 @@ void LCD_draw_str(uint16_t x, uint16_t y, char *c, uint16_t color) {
     x += 8;
   }
 }
+
+void LCD_draw_board() {
+	int size = LCD_MAX_X / 10;
+	int x = 0, y = 0;
+	while(x < LCD_MAX_X) {
+		LCD_draw_line(x, 0, x, LCD_MAX_Y, LCDBlack);
+		x += size;
+	}
+	
+	while(y <= LCD_MAX_X) {
+		LCD_draw_line(0, y, LCD_MAX_X, y, LCDBlack);
+		y += size;
+	}
+}
